@@ -1,0 +1,68 @@
+# CHECKPOINT 11팀 - 경기 광역버스(+따릉이) 출퇴근 자동 수집
+# 평일 출근 06~10시, 퇴근 16~21시(KST)에 GitHub 서버에서 돌고, 끝나면 data/ 를 저장소에 커밋합니다.
+# 필요한 Secret: GG_KEY (필수, 공공데이터포털 Decoding 키), SEOUL_KEY (선택, 따릉이)
+name: collect
+
+on:
+  schedule:
+    # GitHub cron은 UTC 기준. KST = UTC+9. 실행이 5~20분 늦을 수 있어 10분 일찍 잡음.
+    - cron: "50 20 * * 0-4"   # KST 월~금 05:50 → 10시까지
+    - cron: "50 6 * * 1-5"    # KST 월~금 15:50 → 21시까지
+  workflow_dispatch:          # Actions 탭에서 수동 실행(테스트용)
+    inputs:
+      until_hour:
+        description: "몇 시(KST)에 끝낼지"
+        default: "21"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: collect
+  cancel-in-progress: false
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 340
+    env:
+      TZ: Asia/Seoul
+      GG_KEY: ${{ secrets.GG_KEY }}
+      SEOUL_KEY: ${{ secrets.SEOUL_KEY }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: 종료 시각 정하기
+        run: |
+          H=$(date +%H)
+          if [ -n "${{ github.event.inputs.until_hour }}" ]; then U=${{ github.event.inputs.until_hour }};
+          elif [ "$H" -lt 12 ]; then U=10; else U=21; fi
+          echo "RUN_UNTIL_HOUR=$U" >> "$GITHUB_ENV"
+          echo "now=$(date '+%F %T %Z'), until=$U"
+
+      - name: API 연결 확인 (해외 IP 차단 여부)
+        run: |
+          curl -s -o /dev/null -w "data.go.kr HTTP %{http_code}\n" \
+            "https://apis.data.go.kr/6410000/busstationservice/v2/getBusStationViaRouteListv2?serviceKey=${GG_KEY}&stationId=102000070&format=json" || true
+
+      - name: 수집 (버스 코스 + 따릉이 병렬)
+        run: |
+          python3 course_collect.py &
+          BUS=$!
+          if [ -n "$SEOUL_KEY" ]; then python3 collect.py bike & BIKE=$!; fi
+          wait $BUS || true
+          [ -n "$BIKE" ] && wait $BIKE || true
+
+      - name: 결과 커밋
+        if: always()
+        run: |
+          git config user.name "collector-bot"
+          git config user.email "collector-bot@users.noreply.github.com"
+          git add data || true
+          git commit -m "data: $(date '+%F %H:%M') 수집분" || echo "변경 없음"
+          git pull --rebase || true
+          git push || true
