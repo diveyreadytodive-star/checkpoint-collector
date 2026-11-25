@@ -27,6 +27,7 @@ jobs:
     timeout-minutes: 340
     env:
       TZ: Asia/Seoul
+      MAX_MINUTES: "325"
       GG_KEY: ${{ secrets.GG_KEY }}
     steps:
       - uses: actions/checkout@v4
@@ -52,7 +53,10 @@ jobs:
         run: |
           python3 course_collect.py &
           BUS=$!
+          python3 station_collect.py &
+          ST=$!
           wait $BUS || true
+          wait $ST || true
 
       - name: 결과 커밋
         if: always()

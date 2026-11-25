@@ -44,7 +44,11 @@ BASE = "https://apis.data.go.kr/6410000"
 AM, PM = (6, 10), (16, 21)
 TARGETS = [
     {"route": "8800", "station": "102000070", "label": "순천향대학병원(한남동)", "windows": [AM, PM], "every": 90},
-    {"route": "1112", "station": "123000001", "label": "잠실역.잠실대교남단(중)", "windows": [AM, PM], "every": 90},
+    {"route": "1112", "station": "123000002", "label": "잠실역.잠실대교남단(중) 경기행", "windows": [PM], "every": 180},
+    # OSINT 고혼잡 노선 (출근): 미사→판교 3000(황산사거리 만차·전세버스 투입), 동탄 M4101(줄서기 대표 노선), 안성 4401(출퇴근 만차)
+    {"route": "3000", "kw": "황산사거리", "dest": "판교", "label": "황산사거리", "windows": [AM], "every": 180},
+    {"route": "M4101", "kw": "한국지역난방공사", "dest": "숭례문", "label": "한국지역난방공사", "windows": [AM], "every": 180},
+    {"route": "4401", "kw": "공도", "dest": "강남", "label": "공도", "windows": [AM], "every": 180},
     # 하남 감일 → 서울 출근 (일반 시내버스, 빈자리 대신 혼잡도 crowded 1~4)
     {"route": "35", "station": "227000647", "label": "감일푸르지오마크베르(잠실 방면)", "routeId": "227000043", "windows": [AM], "every": 150},
     {"route": "87", "station": "227000344", "label": "감일푸르지오마크베르(수서 방면)", "routeId": "227000036", "windows": [AM], "every": 150},
@@ -96,7 +100,21 @@ def append(path, rows):
         w.writerows(rows)
 
 
+def find_station(t):
+    """키워드로 정류소를 찾아 노선(must)·방향(dest)이 맞는 첫 정류소를 station으로 설정"""
+    for st in as_list(call("busstationservice/v2/getBusStationListv2", keyword=t["kw"]).get("busStationList"))[:15]:
+        for r in as_list(call("busstationservice/v2/getBusStationViaRouteListv2",
+                              stationId=st["stationId"]).get("busRouteList")):
+            if str(r.get("routeName")) == t["route"] and t["dest"] in str(r.get("routeDestName")):
+                t["station"] = str(st["stationId"]); t["label"] = f"{st.get('stationName')}"
+                return True
+    print(f"[!] {t['route']}: '{t['kw']}'에서 {t['dest']} 방면 정류소를 못 찾음 → 건너뜀", file=sys.stderr)
+    return False
+
+
 def resolve(t):
+    if t.get("kw") and not t.get("station") and not find_station(t):
+        return False
     if t.get("station"):
         routes = as_list(call("busstationservice/v2/getBusStationViaRouteListv2",
                               stationId=t["station"]).get("busRouteList"))
@@ -135,7 +153,7 @@ def poll(t, now):
         n_loc = len(loc)
     except Exception as e:
         print(f"[loc] {t['route']} error: {e}", file=sys.stderr)
-    if t.get("station"):
+    if t.get("station") and t.get("arrival", False):  # 도착정보 한도는 정류장 단위 수집(station_collect)에 배정
         try:
             arr = as_list(call("busarrivalservice/v2/getBusArrivalItemv2", stationId=t["station"],
                                routeId=t["routeId"], staOrder=t["staOrder"]).get("busArrivalItem"))
@@ -151,6 +169,8 @@ def main():
     if not GG_KEY:
         sys.exit("GG_KEY 환경변수를 먼저 설정하세요.")
     active = [t for t in TARGETS if resolve(t)]
+    if os.environ.get("DRY"):
+        print("[dry] 확인된 노선:", [(t["route"], t.get("station"), t.get("routeId")) for t in active]); return
     if not active:
         sys.exit("수집할 노선이 없습니다.")
     sample = as_list(call("buslocationservice/v2/getBusLocationListv2",
@@ -158,9 +178,10 @@ def main():
     print("[info] 위치정보 응답 필드:", sorted(sample[0].keys()) if sample else "지금 운행 차량 없음")
     last = {t["route"]: 0.0 for t in active}
     until = int(os.environ.get("RUN_UNTIL_HOUR", "99"))  # GitHub Actions: 이 시각(현지)에 종료
+    deadline = time.time() + 60 * int(os.environ.get("MAX_MINUTES", "100000"))  # 잡 타임아웃 전에 정상 종료
     while True:
         now = datetime.now()
-        if now.hour >= until:
+        if now.hour >= until or time.time() > deadline:
             print(f"[done] {now:%H:%M} 수집 종료")
             return
         for t in active:
