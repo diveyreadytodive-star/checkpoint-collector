@@ -1,6 +1,6 @@
 # CHECKPOINT 11팀 - 경기 광역버스(+따릉이) 출퇴근 자동 수집
 # 평일 출근 06~10시, 퇴근 16~21시(KST)에 GitHub 서버에서 돌고, 끝나면 data/ 를 저장소에 커밋합니다.
-# 필요한 Secret: GG_KEY (필수, 공공데이터포털 Decoding 키), SEOUL_KEY (선택, 따릉이)
+# 필요한 Secret: GG_KEY (필수, 공공데이터포털 Decoding 키)
 name: collect
 
 on:
@@ -28,7 +28,6 @@ jobs:
     env:
       TZ: Asia/Seoul
       GG_KEY: ${{ secrets.GG_KEY }}
-      SEOUL_KEY: ${{ secrets.SEOUL_KEY }}
     steps:
       - uses: actions/checkout@v4
 
@@ -53,9 +52,7 @@ jobs:
         run: |
           python3 course_collect.py &
           BUS=$!
-          if [ -n "$SEOUL_KEY" ]; then python3 collect.py bike & BIKE=$!; fi
           wait $BUS || true
-          [ -n "$BIKE" ] && wait $BIKE || true
 
       - name: 결과 커밋
         if: always()

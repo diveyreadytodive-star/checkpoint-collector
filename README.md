@@ -7,7 +7,6 @@
 3. GitHub에서 **private 저장소** 새로 만들고 이 폴더 파일 전부 업로드 (`.github/workflows/collect.yml` 경로 그대로)
 4. 저장소 Settings → Secrets and variables → Actions → New repository secret
    - `GG_KEY` = 공공데이터포털 Decoding 키
-   - `SEOUL_KEY` = 열린데이터광장 키 (선택)
 5. Actions 탭 → collect → **Run workflow** (until_hour에 지금+1 정도) 로 테스트
    - 로그에서 `[ok] 8800 ...`, `[info] 위치정보 응답 필드: ...`, `data.go.kr HTTP 200` 확인
 
