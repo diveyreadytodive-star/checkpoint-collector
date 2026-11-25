@@ -1,0 +1,728 @@
+{
+ "15142063_onboard": [
+  {
+   "region": "29/29140",
+   "date": "20261123",
+   "http": 200,
+   "n": 0,
+   "fields": [],
+   "head": "{\"Error\":{\"code\":\"50\",\"message\":\"NO_DATA_FOUND\"}}"
+  },
+  {
+   "region": "29/29140",
+   "date": "20261118",
+   "http": 200,
+   "n": 0,
+   "fields": [],
+   "head": "{\"Error\":{\"code\":\"50\",\"message\":\"NO_DATA_FOUND\"}}"
+  },
+  {
+   "region": "29/29140",
+   "date": "20261026",
+   "http": 200,
+   "n": 0,
+   "fields": [],
+   "head": "{\"Error\":{\"code\":\"50\",\"message\":\"NO_DATA_FOUND\"}}"
+  },
+  {
+   "region": "29/29140",
+   "date": "20260827",
+   "http": 200,
+   "n": 0,
+   "fields": [],
+   "head": "{\"Error\":{\"code\":\"50\",\"message\":\"NO_DATA_FOUND\"}}"
+  },
+  {
+   "region": "29/29140",
+   "date": "20250801",
+   "http": 200,
+   "n": 0,
+   "fields": [],
+   "head": "{\"Response\":{\"header\":{\"resultCode\":\"200\",\"resultMsg\":\"SUCCESS\"},\"body\":{\"items\":{\"item\":[{\"opr_ymd\":\"20250801\",\"dow_cd\":\"6\",\"dow_nm\":\"금요일\",\"ctpv_cd\":\"29\",\"ctpv_nm\":\"광주광역시\",\"sgg_cd\":\"29140\",\"sgg_nm\":\"서구\",\"rte_id\":\"00000001\",\"rte_nm\":\"순환01(시청행)\",\"dptre_sttn_nm\":null,\"arvl_sttn_nm\":null,\"sttn_seq\":2,\""
+  },
+  {
+   "region": "41/41110",
+   "date": "20261123",
+   "http": 200,
+   "n": 0,
+   "fields": [],
+   "head": "{\"Error\":{\"code\":\"50\",\"message\":\"NO_DATA_FOUND\"}}"
+  },
+  {
+   "region": "41/41110",
+   "date": "20261118",
+   "http": -1,
+   "n": 0,
+   "fields": [],
+   "head": "<urlopen error _ssl.c:994: The handshake operation timed out>"
+  },
+  {
+   "region": "41/41110",
+   "date": "20261026",
+   "http": 200,
+   "n": 0,
+   "fields": [],
+   "head": "{\"Error\":{\"code\":\"50\",\"message\":\"NO_DATA_FOUND\"}}"
+  },
+  {
+   "region": "41/41110",
+   "date": "20260827",
+   "http": 200,
+   "n": 0,
+   "fields": [],
+   "head": "{\"Error\":{\"code\":\"50\",\"message\":\"NO_DATA_FOUND\"}}"
+  },
+  {
+   "region": "41/41110",
+   "date": "20250801",
+   "http": 200,
+   "n": 0,
+   "fields": [],
+   "head": "{\"Error\":{\"code\":\"50\",\"message\":\"NO_DATA_FOUND\"}}"
+  },
+  {
+   "region": "41/41111",
+   "date": "20261123",
+   "http": 200,
+   "n": 0,
+   "fields": [],
+   "head": "{\"Error\":{\"code\":\"50\",\"message\":\"NO_DATA_FOUND\"}}"
+  },
+  {
+   "region": "41/41111",
+   "date": "20261118",
+   "http": 200,
+   "n": 0,
+   "fields": [],
+   "head": "{\"Error\":{\"code\":\"50\",\"message\":\"NO_DATA_FOUND\"}}"
+  },
+  {
+   "region": "41/41111",
+   "date": "20261026",
+   "http": 200,
+   "n": 0,
+   "fields": [],
+   "head": "{\"Response\":{\"header\":{\"resultCode\":\"200\",\"resultMsg\":\"SUCCESS\"},\"body\":{\"items\":{\"item\":[{\"opr_ymd\":\"20261026\",\"dow_cd\":\"2\",\"dow_nm\":\"월요일\",\"ctpv_cd\":\"41\",\"ctpv_nm\":\"경기도\",\"sgg_cd\":\"41111\",\"sgg_nm\":\"수원시 장안구\",\"rte_id\":\"41002044\",\"rte_nm\":\"오리역-오리역\",\"dptre_sttn_nm\":\"오리역\",\"arvl_sttn_nm\":\"오리역\",\"sttn_seq\":"
+  },
+  {
+   "region": "41/41111",
+   "date": "20260827",
+   "http": 200,
+   "n": 0,
+   "fields": [],
+   "head": "{\"Response\":{\"header\":{\"resultCode\":\"200\",\"resultMsg\":\"SUCCESS\"},\"body\":{\"items\":{\"item\":[{\"opr_ymd\":\"20260827\",\"dow_cd\":\"5\",\"dow_nm\":\"목요일\",\"ctpv_cd\":\"41\",\"ctpv_nm\":\"경기도\",\"sgg_cd\":\"41111\",\"sgg_nm\":\"수원시 장안구\",\"rte_id\":\"41002044\",\"rte_nm\":\"오리역-오리역\",\"dptre_sttn_nm\":\"오리역\",\"arvl_sttn_nm\":\"오리역\",\"sttn_seq\":"
+  },
+  {
+   "region": "41/41111",
+   "date": "20250801",
+   "http": 200,
+   "n": 0,
+   "fields": [],
+   "head": "{\"Response\":{\"header\":{\"resultCode\":\"200\",\"resultMsg\":\"SUCCESS\"},\"body\":{\"items\":{\"item\":[{\"opr_ymd\":\"20250801\",\"dow_cd\":\"6\",\"dow_nm\":\"금요일\",\"ctpv_cd\":\"41\",\"ctpv_nm\":\"경기도\",\"sgg_cd\":\"41111\",\"sgg_nm\":\"수원시 장안구\",\"rte_id\":\"41002044\",\"rte_nm\":\"오리역-오리역\",\"dptre_sttn_nm\":\"오리역\",\"arvl_sttn_nm\":\"오리역\",\"sttn_seq\":"
+  },
+  {
+   "region": "41/41460",
+   "date": "20261123",
+   "http": 200,
+   "n": 0,
+   "fields": [],
+   "head": "{\"Error\":{\"code\":\"50\",\"message\":\"NO_DATA_FOUND\"}}"
+  },
+  {
+   "region": "41/41460",
+   "date": "20261118",
+   "http": 200,
+   "n": 0,
+   "fields": [],
+   "head": "{\"Error\":{\"code\":\"50\",\"message\":\"NO_DATA_FOUND\"}}"
+  },
+  {
+   "region": "41/41460",
+   "date": "20261026",
+   "http": 200,
+   "n": 0,
+   "fields": [],
+   "head": "{\"Error\":{\"code\":\"50\",\"message\":\"NO_DATA_FOUND\"}}"
+  },
+  {
+   "region": "41/41460",
+   "date": "20260827",
+   "http": 200,
+   "n": 0,
+   "fields": [],
+   "head": "{\"Error\":{\"code\":\"50\",\"message\":\"NO_DATA_FOUND\"}}"
+  },
+  {
+   "region": "41/41460",
+   "date": "20250801",
+   "http": 200,
+   "n": 0,
+   "fields": [],
+   "head": "{\"Error\":{\"code\":\"50\",\"message\":\"NO_DATA_FOUND\"}}"
+  },
+  {
+   "region": "11/11170",
+   "date": "20261123",
+   "http": 200,
+   "n": 0,
+   "fields": [],
+   "head": "{\"Error\":{\"code\":\"50\",\"message\":\"NO_DATA_FOUND\"}}"
+  },
+  {
+   "region": "11/11170",
+   "date": "20261118",
+   "http": 200,
+   "n": 0,
+   "fields": [],
+   "head": "{\"Error\":{\"code\":\"50\",\"message\":\"NO_DATA_FOUND\"}}"
+  },
+  {
+   "region": "11/11170",
+   "date": "20261026",
+   "http": 200,
+   "n": 0,
+   "fields": [],
+   "head": "{\"Response\":{\"header\":{\"resultCode\":\"200\",\"resultMsg\":\"SUCCESS\"},\"body\":{\"items\":{\"item\":[{\"opr_ymd\":\"20261026\",\"dow_cd\":\"2\",\"dow_nm\":\"월요일\",\"ctpv_cd\":\"11\",\"ctpv_nm\":\"서울특별시\",\"sgg_cd\":\"11170\",\"sgg_nm\":\"용산구\",\"rte_id\":\"11110001\",\"rte_nm\":\"100번(하계동용산구청)\",\"dptre_sttn_nm\":\"한성여객종점\",\"arvl_sttn_nm\":\"한성여객종점\",\""
+  },
+  {
+   "region": "11/11170",
+   "date": "20260827",
+   "http": 200,
+   "n": 0,
+   "fields": [],
+   "head": "{\"Response\":{\"header\":{\"resultCode\":\"200\",\"resultMsg\":\"SUCCESS\"},\"body\":{\"items\":{\"item\":[{\"opr_ymd\":\"20260827\",\"dow_cd\":\"5\",\"dow_nm\":\"목요일\",\"ctpv_cd\":\"11\",\"ctpv_nm\":\"서울특별시\",\"sgg_cd\":\"11170\",\"sgg_nm\":\"용산구\",\"rte_id\":\"11110001\",\"rte_nm\":\"100번(하계동용산구청)\",\"dptre_sttn_nm\":\"한성여객종점\",\"arvl_sttn_nm\":\"한성여객종점\",\""
+  },
+  {
+   "region": "11/11170",
+   "date": "20250801",
+   "http": 200,
+   "n": 0,
+   "fields": [],
+   "head": "{\"Response\":{\"header\":{\"resultCode\":\"200\",\"resultMsg\":\"SUCCESS\"},\"body\":{\"items\":{\"item\":[{\"opr_ymd\":\"20250801\",\"dow_cd\":\"6\",\"dow_nm\":\"금요일\",\"ctpv_cd\":\"11\",\"ctpv_nm\":\"서울특별시\",\"sgg_cd\":\"11170\",\"sgg_nm\":\"용산구\",\"rte_id\":\"11110001\",\"rte_nm\":\"100번(하계동용산구청)\",\"dptre_sttn_nm\":\"한성여객종점\",\"arvl_sttn_nm\":\"한성여객종점\",\""
+  },
+  {
+   "region": "11/11710",
+   "date": "20261123",
+   "http": 200,
+   "n": 0,
+   "fields": [],
+   "head": "{\"Error\":{\"code\":\"50\",\"message\":\"NO_DATA_FOUND\"}}"
+  },
+  {
+   "region": "11/11710",
+   "date": "20261118",
+   "http": 200,
+   "n": 0,
+   "fields": [],
+   "head": "{\"Error\":{\"code\":\"50\",\"message\":\"NO_DATA_FOUND\"}}"
+  },
+  {
+   "region": "11/11710",
+   "date": "20261026",
+   "http": 200,
+   "n": 0,
+   "fields": [],
+   "head": "{\"Response\":{\"header\":{\"resultCode\":\"200\",\"resultMsg\":\"SUCCESS\"},\"body\":{\"items\":{\"item\":[{\"opr_ymd\":\"20261026\",\"dow_cd\":\"2\",\"dow_nm\":\"월요일\",\"ctpv_cd\":\"11\",\"ctpv_nm\":\"서울특별시\",\"sgg_cd\":\"11710\",\"sgg_nm\":\"송파구\",\"rte_id\":\"11110037\",\"rte_nm\":\"301번(장지공영차고지혜화동)\",\"dptre_sttn_nm\":\"서울버스종점\",\"arvl_sttn_nm\":\"서울버스종점"
+  },
+  {
+   "region": "11/11710",
+   "date": "20260827",
+   "http": 200,
+   "n": 0,
+   "fields": [],
+   "head": "{\"Response\":{\"header\":{\"resultCode\":\"200\",\"resultMsg\":\"SUCCESS\"},\"body\":{\"items\":{\"item\":[{\"opr_ymd\":\"20260827\",\"dow_cd\":\"5\",\"dow_nm\":\"목요일\",\"ctpv_cd\":\"11\",\"ctpv_nm\":\"서울특별시\",\"sgg_cd\":\"11710\",\"sgg_nm\":\"송파구\",\"rte_id\":\"11110037\",\"rte_nm\":\"301번(장지공영차고지혜화동)\",\"dptre_sttn_nm\":\"서울버스종점\",\"arvl_sttn_nm\":\"서울버스종점"
+  },
+  {
+   "region": "11/11710",
+   "date": "20250801",
+   "http": 200,
+   "n": 0,
+   "fields": [],
+   "head": "{\"Response\":{\"header\":{\"resultCode\":\"200\",\"resultMsg\":\"SUCCESS\"},\"body\":{\"items\":{\"item\":[{\"opr_ymd\":\"20250801\",\"dow_cd\":\"6\",\"dow_nm\":\"금요일\",\"ctpv_cd\":\"11\",\"ctpv_nm\":\"서울특별시\",\"sgg_cd\":\"11710\",\"sgg_nm\":\"송파구\",\"rte_id\":\"11110037\",\"rte_nm\":\"301번(장지공영차고지혜화동)\",\"dptre_sttn_nm\":\"서울버스종점\",\"arvl_sttn_nm\":\"서울버스종점"
+  }
+ ],
+ "15142062_route_daily": [
+  {
+   "region": "29/29140",
+   "date": "20261123",
+   "http": 200,
+   "n": 0,
+   "fields": [],
+   "head": "{\"Error\":{\"code\":\"50\",\"message\":\"NO_DATA_FOUND\"}}"
+  },
+  {
+   "region": "29/29140",
+   "date": "20261118",
+   "http": 200,
+   "n": 0,
+   "fields": [],
+   "head": "{\"Error\":{\"code\":\"50\",\"message\":\"NO_DATA_FOUND\"}}"
+  },
+  {
+   "region": "29/29140",
+   "date": "20261026",
+   "http": 200,
+   "n": 0,
+   "fields": [],
+   "head": "{\"Error\":{\"code\":\"50\",\"message\":\"NO_DATA_FOUND\"}}"
+  },
+  {
+   "region": "29/29140",
+   "date": "20260827",
+   "http": 200,
+   "n": 0,
+   "fields": [],
+   "head": "{\"Error\":{\"code\":\"50\",\"message\":\"NO_DATA_FOUND\"}}"
+  },
+  {
+   "region": "29/29140",
+   "date": "20250801",
+   "http": 200,
+   "n": 0,
+   "fields": [],
+   "head": "{\"Response\":{\"header\":{\"resultCode\":\"200\",\"resultMsg\":\"SUCCESS\"},\"body\":{\"items\":{\"item\":[{\"opr_ymd\":\"20250801\",\"dow_cd\":\"6\",\"dow_nm\":\"금요일\",\"ctpv_cd\":\"29\",\"ctpv_nm\":\"광주광역시\",\"sgg_cd\":\"29140\",\"sgg_nm\":\"서구\",\"emd_cd\":\"2914010400\",\"emd_nm\":\"양동\",\"rte_id\":\"00000001\",\"rte_nm\":\"1\",\"dptre_sttn_nm\":null,\"arvl_"
+  },
+  {
+   "region": "41/41110",
+   "date": "20261123",
+   "http": 200,
+   "n": 0,
+   "fields": [],
+   "head": "{\"Error\":{\"code\":\"50\",\"message\":\"NO_DATA_FOUND\"}}"
+  },
+  {
+   "region": "41/41110",
+   "date": "20261118",
+   "http": 200,
+   "n": 0,
+   "fields": [],
+   "head": "{\"Error\":{\"code\":\"50\",\"message\":\"NO_DATA_FOUND\"}}"
+  },
+  {
+   "region": "41/41110",
+   "date": "20261026",
+   "http": 200,
+   "n": 0,
+   "fields": [],
+   "head": "{\"Error\":{\"code\":\"50\",\"message\":\"NO_DATA_FOUND\"}}"
+  },
+  {
+   "region": "41/41110",
+   "date": "20260827",
+   "http": 200,
+   "n": 0,
+   "fields": [],
+   "head": "{\"Error\":{\"code\":\"50\",\"message\":\"NO_DATA_FOUND\"}}"
+  },
+  {
+   "region": "41/41110",
+   "date": "20250801",
+   "http": 200,
+   "n": 0,
+   "fields": [],
+   "head": "{\"Error\":{\"code\":\"50\",\"message\":\"NO_DATA_FOUND\"}}"
+  },
+  {
+   "region": "41/41111",
+   "date": "20261123",
+   "http": -1,
+   "n": 0,
+   "fields": [],
+   "head": "<urlopen error _ssl.c:994: The handshake operation timed out>"
+  },
+  {
+   "region": "41/41111",
+   "date": "20261118",
+   "http": 200,
+   "n": 0,
+   "fields": [],
+   "head": "{\"Error\":{\"code\":\"50\",\"message\":\"NO_DATA_FOUND\"}}"
+  },
+  {
+   "region": "41/41111",
+   "date": "20261026",
+   "http": 200,
+   "n": 0,
+   "fields": [],
+   "head": "{\"Response\":{\"header\":{\"resultCode\":\"200\",\"resultMsg\":\"SUCCESS\"},\"body\":{\"items\":{\"item\":[{\"opr_ymd\":\"20261026\",\"dow_cd\":\"2\",\"dow_nm\":\"월요일\",\"ctpv_cd\":\"41\",\"ctpv_nm\":\"경기도\",\"sgg_cd\":\"41111\",\"sgg_nm\":\"수원시 장안구\",\"emd_cd\":\"4111112900\",\"emd_nm\":\"파장동\",\"rte_id\":\"41002802\",\"rte_nm\":\"낙양동공영차고지-낙양동공영차고지\",\"dptre_"
+  },
+  {
+   "region": "41/41111",
+   "date": "20260827",
+   "http": 200,
+   "n": 0,
+   "fields": [],
+   "head": "{\"Response\":{\"header\":{\"resultCode\":\"200\",\"resultMsg\":\"SUCCESS\"},\"body\":{\"items\":{\"item\":[{\"opr_ymd\":\"20260827\",\"dow_cd\":\"5\",\"dow_nm\":\"목요일\",\"ctpv_cd\":\"41\",\"ctpv_nm\":\"경기도\",\"sgg_cd\":\"41111\",\"sgg_nm\":\"수원시 장안구\",\"emd_cd\":\"4111112900\",\"emd_nm\":\"파장동\",\"rte_id\":\"41002802\",\"rte_nm\":\"낙양동공영차고지-낙양동공영차고지\",\"dptre_"
+  },
+  {
+   "region": "41/41111",
+   "date": "20250801",
+   "http": 200,
+   "n": 0,
+   "fields": [],
+   "head": "{\"Response\":{\"header\":{\"resultCode\":\"200\",\"resultMsg\":\"SUCCESS\"},\"body\":{\"items\":{\"item\":[{\"opr_ymd\":\"20250801\",\"dow_cd\":\"6\",\"dow_nm\":\"금요일\",\"ctpv_cd\":\"41\",\"ctpv_nm\":\"경기도\",\"sgg_cd\":\"41111\",\"sgg_nm\":\"수원시 장안구\",\"emd_cd\":\"4111112900\",\"emd_nm\":\"파장동\",\"rte_id\":\"41002802\",\"rte_nm\":\"낙양동공영차고지-낙양동공영차고지\",\"dptre_"
+  },
+  {
+   "region": "41/41460",
+   "date": "20261123",
+   "http": 200,
+   "n": 0,
+   "fields": [],
+   "head": "{\"Error\":{\"code\":\"50\",\"message\":\"NO_DATA_FOUND\"}}"
+  },
+  {
+   "region": "41/41460",
+   "date": "20261118",
+   "http": 200,
+   "n": 0,
+   "fields": [],
+   "head": "{\"Error\":{\"code\":\"50\",\"message\":\"NO_DATA_FOUND\"}}"
+  },
+  {
+   "region": "41/41460",
+   "date": "20261026",
+   "http": 200,
+   "n": 0,
+   "fields": [],
+   "head": "{\"Error\":{\"code\":\"50\",\"message\":\"NO_DATA_FOUND\"}}"
+  },
+  {
+   "region": "41/41460",
+   "date": "20260827",
+   "http": 200,
+   "n": 0,
+   "fields": [],
+   "head": "{\"Error\":{\"code\":\"50\",\"message\":\"NO_DATA_FOUND\"}}"
+  },
+  {
+   "region": "41/41460",
+   "date": "20250801",
+   "http": 200,
+   "n": 0,
+   "fields": [],
+   "head": "{\"Error\":{\"code\":\"50\",\"message\":\"NO_DATA_FOUND\"}}"
+  },
+  {
+   "region": "11/11170",
+   "date": "20261123",
+   "http": 200,
+   "n": 0,
+   "fields": [],
+   "head": "{\"Error\":{\"code\":\"50\",\"message\":\"NO_DATA_FOUND\"}}"
+  },
+  {
+   "region": "11/11170",
+   "date": "20261118",
+   "http": 200,
+   "n": 0,
+   "fields": [],
+   "head": "{\"Error\":{\"code\":\"50\",\"message\":\"NO_DATA_FOUND\"}}"
+  },
+  {
+   "region": "11/11170",
+   "date": "20261026",
+   "http": 200,
+   "n": 0,
+   "fields": [],
+   "head": "{\"Response\":{\"header\":{\"resultCode\":\"200\",\"resultMsg\":\"SUCCESS\"},\"body\":{\"items\":{\"item\":[{\"opr_ymd\":\"20261026\",\"dow_cd\":\"2\",\"dow_nm\":\"월요일\",\"ctpv_cd\":\"11\",\"ctpv_nm\":\"서울특별시\",\"sgg_cd\":\"11170\",\"sgg_nm\":\"용산구\",\"emd_cd\":\"1117010100\",\"emd_nm\":\"후암동\",\"rte_id\":\"11110044\",\"rte_nm\":\"400번(염곡동시청)\",\"dptre_sttn_nm\""
+  },
+  {
+   "region": "11/11170",
+   "date": "20260827",
+   "http": 200,
+   "n": 0,
+   "fields": [],
+   "head": "{\"Response\":{\"header\":{\"resultCode\":\"200\",\"resultMsg\":\"SUCCESS\"},\"body\":{\"items\":{\"item\":[{\"opr_ymd\":\"20260827\",\"dow_cd\":\"5\",\"dow_nm\":\"목요일\",\"ctpv_cd\":\"11\",\"ctpv_nm\":\"서울특별시\",\"sgg_cd\":\"11170\",\"sgg_nm\":\"용산구\",\"emd_cd\":\"1117010100\",\"emd_nm\":\"후암동\",\"rte_id\":\"11110044\",\"rte_nm\":\"400번(염곡동시청)\",\"dptre_sttn_nm\""
+  },
+  {
+   "region": "11/11170",
+   "date": "20250801",
+   "http": 200,
+   "n": 0,
+   "fields": [],
+   "head": "{\"Response\":{\"header\":{\"resultCode\":\"200\",\"resultMsg\":\"SUCCESS\"},\"body\":{\"items\":{\"item\":[{\"opr_ymd\":\"20250801\",\"dow_cd\":\"6\",\"dow_nm\":\"금요일\",\"ctpv_cd\":\"11\",\"ctpv_nm\":\"서울특별시\",\"sgg_cd\":\"11170\",\"sgg_nm\":\"용산구\",\"emd_cd\":\"1117010100\",\"emd_nm\":\"후암동\",\"rte_id\":\"11110044\",\"rte_nm\":\"400번(염곡동시청)\",\"dptre_sttn_nm\""
+  },
+  {
+   "region": "11/11710",
+   "date": "20261123",
+   "http": 200,
+   "n": 0,
+   "fields": [],
+   "head": "{\"Error\":{\"code\":\"50\",\"message\":\"NO_DATA_FOUND\"}}"
+  },
+  {
+   "region": "11/11710",
+   "date": "20261118",
+   "http": 200,
+   "n": 0,
+   "fields": [],
+   "head": "{\"Error\":{\"code\":\"50\",\"message\":\"NO_DATA_FOUND\"}}"
+  },
+  {
+   "region": "11/11710",
+   "date": "20261026",
+   "http": 200,
+   "n": 0,
+   "fields": [],
+   "head": "{\"Response\":{\"header\":{\"resultCode\":\"200\",\"resultMsg\":\"SUCCESS\"},\"body\":{\"items\":{\"item\":[{\"opr_ymd\":\"20261026\",\"dow_cd\":\"2\",\"dow_nm\":\"월요일\",\"ctpv_cd\":\"11\",\"ctpv_nm\":\"서울특별시\",\"sgg_cd\":\"11710\",\"sgg_nm\":\"송파구\",\"emd_cd\":\"1171010100\",\"emd_nm\":\"잠실동\",\"rte_id\":\"001\",\"rte_nm\":\"1호선\",\"dptre_sttn_nm\":\"연천\",\"arvl_s"
+  },
+  {
+   "region": "11/11710",
+   "date": "20260827",
+   "http": 200,
+   "n": 0,
+   "fields": [],
+   "head": "{\"Response\":{\"header\":{\"resultCode\":\"200\",\"resultMsg\":\"SUCCESS\"},\"body\":{\"items\":{\"item\":[{\"opr_ymd\":\"20260827\",\"dow_cd\":\"5\",\"dow_nm\":\"목요일\",\"ctpv_cd\":\"11\",\"ctpv_nm\":\"서울특별시\",\"sgg_cd\":\"11710\",\"sgg_nm\":\"송파구\",\"emd_cd\":\"1171010100\",\"emd_nm\":\"잠실동\",\"rte_id\":\"001\",\"rte_nm\":\"1호선\",\"dptre_sttn_nm\":\"연천\",\"arvl_s"
+  },
+  {
+   "region": "11/11710",
+   "date": "20250801",
+   "http": 200,
+   "n": 0,
+   "fields": [],
+   "head": "{\"Response\":{\"header\":{\"resultCode\":\"200\",\"resultMsg\":\"SUCCESS\"},\"body\":{\"items\":{\"item\":[{\"opr_ymd\":\"20250801\",\"dow_cd\":\"6\",\"dow_nm\":\"금요일\",\"ctpv_cd\":\"11\",\"ctpv_nm\":\"서울특별시\",\"sgg_cd\":\"11710\",\"sgg_nm\":\"송파구\",\"emd_cd\":\"1171010100\",\"emd_nm\":\"잠실동\",\"rte_id\":\"001\",\"rte_nm\":\"1호선\",\"dptre_sttn_nm\":\"연천\",\"arvl_s"
+  }
+ ],
+ "15142065_stop_route_daily": [
+  {
+   "region": "29/29140",
+   "date": "20261123",
+   "http": 200,
+   "n": 0,
+   "fields": [],
+   "head": "{\"Error\":{\"code\":\"50\",\"message\":\"NO_DATA_FOUND\"}}"
+  },
+  {
+   "region": "29/29140",
+   "date": "20261118",
+   "http": 200,
+   "n": 0,
+   "fields": [],
+   "head": "{\"Error\":{\"code\":\"50\",\"message\":\"NO_DATA_FOUND\"}}"
+  },
+  {
+   "region": "29/29140",
+   "date": "20261026",
+   "http": 200,
+   "n": 0,
+   "fields": [],
+   "head": "{\"Error\":{\"code\":\"50\",\"message\":\"NO_DATA_FOUND\"}}"
+  },
+  {
+   "region": "29/29140",
+   "date": "20260827",
+   "http": 200,
+   "n": 0,
+   "fields": [],
+   "head": "{\"Error\":{\"code\":\"50\",\"message\":\"NO_DATA_FOUND\"}}"
+  },
+  {
+   "region": "29/29140",
+   "date": "20250801",
+   "http": 200,
+   "n": 0,
+   "fields": [],
+   "head": "{\"Response\":{\"header\":{\"resultCode\":\"200\",\"resultMsg\":\"SUCCESS\"},\"body\":{\"items\":{\"item\":[{\"opr_ymd\":\"20250801\",\"dow_cd\":\"6\",\"dow_nm\":\"금요일\",\"ctpv_cd\":\"29\",\"ctpv_nm\":\"광주광역시\",\"sgg_cd\":\"29140\",\"sgg_nm\":\"서구\",\"emd_cd\":\"2914010400\",\"emd_nm\":\"양동\",\"sttn_id\":\"00000008\",\"sttn_nm\":\"양동시장\",\"sttn_ars_no\":\"~\",\"rte"
+  },
+  {
+   "region": "41/41110",
+   "date": "20261123",
+   "http": 200,
+   "n": 0,
+   "fields": [],
+   "head": "{\"Error\":{\"code\":\"50\",\"message\":\"NO_DATA_FOUND\"}}"
+  },
+  {
+   "region": "41/41110",
+   "date": "20261118",
+   "http": 200,
+   "n": 0,
+   "fields": [],
+   "head": "{\"Error\":{\"code\":\"50\",\"message\":\"NO_DATA_FOUND\"}}"
+  },
+  {
+   "region": "41/41110",
+   "date": "20261026",
+   "http": 200,
+   "n": 0,
+   "fields": [],
+   "head": "{\"Error\":{\"code\":\"50\",\"message\":\"NO_DATA_FOUND\"}}"
+  },
+  {
+   "region": "41/41110",
+   "date": "20260827",
+   "http": 200,
+   "n": 0,
+   "fields": [],
+   "head": "{\"Error\":{\"code\":\"50\",\"message\":\"NO_DATA_FOUND\"}}"
+  },
+  {
+   "region": "41/41110",
+   "date": "20250801",
+   "http": 200,
+   "n": 0,
+   "fields": [],
+   "head": "{\"Error\":{\"code\":\"50\",\"message\":\"NO_DATA_FOUND\"}}"
+  },
+  {
+   "region": "41/41111",
+   "date": "20261123",
+   "http": 200,
+   "n": 0,
+   "fields": [],
+   "head": "{\"Error\":{\"code\":\"50\",\"message\":\"NO_DATA_FOUND\"}}"
+  },
+  {
+   "region": "41/41111",
+   "date": "20261118",
+   "http": 200,
+   "n": 0,
+   "fields": [],
+   "head": "{\"Error\":{\"code\":\"50\",\"message\":\"NO_DATA_FOUND\"}}"
+  },
+  {
+   "region": "41/41111",
+   "date": "20261026",
+   "http": 200,
+   "n": 0,
+   "fields": [],
+   "head": "{\"Response\":{\"header\":{\"resultCode\":\"200\",\"resultMsg\":\"SUCCESS\"},\"body\":{\"items\":{\"item\":[{\"opr_ymd\":\"20261026\",\"dow_cd\":\"2\",\"dow_nm\":\"월요일\",\"ctpv_cd\":\"41\",\"ctpv_nm\":\"경기도\",\"sgg_cd\":\"41111\",\"sgg_nm\":\"수원시 장안구\",\"emd_cd\":\"4111112900\",\"emd_nm\":\"파장동\",\"sttn_id\":\"4100130\",\"sttn_nm\":\"수일중학교\",\"sttn_ars_no\":\"011"
+  },
+  {
+   "region": "41/41111",
+   "date": "20260827",
+   "http": 200,
+   "n": 0,
+   "fields": [],
+   "head": "{\"Response\":{\"header\":{\"resultCode\":\"200\",\"resultMsg\":\"SUCCESS\"},\"body\":{\"items\":{\"item\":[{\"opr_ymd\":\"20260827\",\"dow_cd\":\"5\",\"dow_nm\":\"목요일\",\"ctpv_cd\":\"41\",\"ctpv_nm\":\"경기도\",\"sgg_cd\":\"41111\",\"sgg_nm\":\"수원시 장안구\",\"emd_cd\":\"4111112900\",\"emd_nm\":\"파장동\",\"sttn_id\":\"4100130\",\"sttn_nm\":\"수일중학교\",\"sttn_ars_no\":\"011"
+  },
+  {
+   "region": "41/41111",
+   "date": "20250801",
+   "http": 200,
+   "n": 0,
+   "fields": [],
+   "head": "{\"Response\":{\"header\":{\"resultCode\":\"200\",\"resultMsg\":\"SUCCESS\"},\"body\":{\"items\":{\"item\":[{\"opr_ymd\":\"20250801\",\"dow_cd\":\"6\",\"dow_nm\":\"금요일\",\"ctpv_cd\":\"41\",\"ctpv_nm\":\"경기도\",\"sgg_cd\":\"41111\",\"sgg_nm\":\"수원시 장안구\",\"emd_cd\":\"4111112900\",\"emd_nm\":\"파장동\",\"sttn_id\":\"4100135\",\"sttn_nm\":\"경기도인재개발원.연구원.평생교육진흥원.여성가족"
+  },
+  {
+   "region": "41/41460",
+   "date": "20261123",
+   "http": 200,
+   "n": 0,
+   "fields": [],
+   "head": "{\"Error\":{\"code\":\"50\",\"message\":\"NO_DATA_FOUND\"}}"
+  },
+  {
+   "region": "41/41460",
+   "date": "20261118",
+   "http": 200,
+   "n": 0,
+   "fields": [],
+   "head": "{\"Error\":{\"code\":\"50\",\"message\":\"NO_DATA_FOUND\"}}"
+  },
+  {
+   "region": "41/41460",
+   "date": "20261026",
+   "http": 200,
+   "n": 0,
+   "fields": [],
+   "head": "{\"Error\":{\"code\":\"50\",\"message\":\"NO_DATA_FOUND\"}}"
+  },
+  {
+   "region": "41/41460",
+   "date": "20260827",
+   "http": 200,
+   "n": 0,
+   "fields": [],
+   "head": "{\"Error\":{\"code\":\"50\",\"message\":\"NO_DATA_FOUND\"}}"
+  },
+  {
+   "region": "41/41460",
+   "date": "20250801",
+   "http": 200,
+   "n": 0,
+   "fields": [],
+   "head": "{\"Error\":{\"code\":\"50\",\"message\":\"NO_DATA_FOUND\"}}"
+  },
+  {
+   "region": "11/11170",
+   "date": "20261123",
+   "http": 200,
+   "n": 0,
+   "fields": [],
+   "head": "{\"Error\":{\"code\":\"50\",\"message\":\"NO_DATA_FOUND\"}}"
+  },
+  {
+   "region": "11/11170",
+   "date": "20261118",
+   "http": 200,
+   "n": 0,
+   "fields": [],
+   "head": "{\"Error\":{\"code\":\"50\",\"message\":\"NO_DATA_FOUND\"}}"
+  },
+  {
+   "region": "11/11170",
+   "date": "20261026",
+   "http": 200,
+   "n": 0,
+   "fields": [],
+   "head": "{\"Response\":{\"header\":{\"resultCode\":\"200\",\"resultMsg\":\"SUCCESS\"},\"body\":{\"items\":{\"item\":[{\"opr_ymd\":\"20261026\",\"dow_cd\":\"2\",\"dow_nm\":\"월요일\",\"ctpv_cd\":\"11\",\"ctpv_nm\":\"서울특별시\",\"sgg_cd\":\"11170\",\"sgg_nm\":\"용산구\",\"emd_cd\":\"1117010100\",\"emd_nm\":\"후암동\",\"sttn_id\":\"0008745\",\"sttn_nm\":\"후암삼거리\",\"sttn_ars_no\":\"03199"
+  },
+  {
+   "region": "11/11170",
+   "date": "20260827",
+   "http": 200,
+   "n": 0,
+   "fields": [],
+   "head": "{\"Response\":{\"header\":{\"resultCode\":\"200\",\"resultMsg\":\"SUCCESS\"},\"body\":{\"items\":{\"item\":[{\"opr_ymd\":\"20260827\",\"dow_cd\":\"5\",\"dow_nm\":\"목요일\",\"ctpv_cd\":\"11\",\"ctpv_nm\":\"서울특별시\",\"sgg_cd\":\"11170\",\"sgg_nm\":\"용산구\",\"emd_cd\":\"1117010100\",\"emd_nm\":\"후암동\",\"sttn_id\":\"0008745\",\"sttn_nm\":\"후암삼거리\",\"sttn_ars_no\":\"03199"
+  },
+  {
+   "region": "11/11170",
+   "date": "20250801",
+   "http": 200,
+   "n": 0,
+   "fields": [],
+   "head": "{\"Response\":{\"header\":{\"resultCode\":\"200\",\"resultMsg\":\"SUCCESS\"},\"body\":{\"items\":{\"item\":[{\"opr_ymd\":\"20250801\",\"dow_cd\":\"6\",\"dow_nm\":\"금요일\",\"ctpv_cd\":\"11\",\"ctpv_nm\":\"서울특별시\",\"sgg_cd\":\"11170\",\"sgg_nm\":\"용산구\",\"emd_cd\":\"1117010100\",\"emd_nm\":\"후암동\",\"sttn_id\":\"0008745\",\"sttn_nm\":\"후암삼거리\",\"sttn_ars_no\":\"03199"
+  },
+  {
+   "region": "11/11710",
+   "date": "20261123",
+   "http": 200,
+   "n": 0,
+   "fields": [],
+   "head": "{\"Error\":{\"code\":\"50\",\"message\":\"NO_DATA_FOUND\"}}"
+  },
+  {
+   "region": "11/11710",
+   "date": "20261118",
+   "http": 200,
+   "n": 0,
+   "fields": [],
+   "head": "{\"Error\":{\"code\":\"50\",\"message\":\"NO_DATA_FOUND\"}}"
+  },
+  {
+   "region": "11/11710",
+   "date": "20261026",
+   "http": 200,
+   "n": 0,
+   "fields": [],
+   "head": "{\"Response\":{\"header\":{\"resultCode\":\"200\",\"resultMsg\":\"SUCCESS\"},\"body\":{\"items\":{\"item\":[{\"opr_ymd\":\"20261026\",\"dow_cd\":\"2\",\"dow_nm\":\"월요일\",\"ctpv_cd\":\"11\",\"ctpv_nm\":\"서울특별시\",\"sgg_cd\":\"11710\",\"sgg_nm\":\"송파구\",\"emd_cd\":\"1171010100\",\"emd_nm\":\"잠실동\",\"sttn_id\":\"0000081\",\"sttn_nm\":\"잠실역\",\"sttn_ars_no\":\"24715\","
+  },
+  {
+   "region": "11/11710",
+   "date": "20260827",
+   "http": 200,
+   "n": 0,
+   "fields": [],
+   "head": "{\"Response\":{\"header\":{\"resultCode\":\"200\",\"resultMsg\":\"SUCCESS\"},\"body\":{\"items\":{\"item\":[{\"opr_ymd\":\"20260827\",\"dow_cd\":\"5\",\"dow_nm\":\"목요일\",\"ctpv_cd\":\"11\",\"ctpv_nm\":\"서울특별시\",\"sgg_cd\":\"11710\",\"sgg_nm\":\"송파구\",\"emd_cd\":\"1171010100\",\"emd_nm\":\"잠실동\",\"sttn_id\":\"0000081\",\"sttn_nm\":\"잠실역\",\"sttn_ars_no\":\"24715\","
+  },
+  {
+   "region": "11/11710",
+   "date": "20250801",
+   "http": 200,
+   "n": 0,
+   "fields": [],
+   "head": "{\"Response\":{\"header\":{\"resultCode\":\"200\",\"resultMsg\":\"SUCCESS\"},\"body\":{\"items\":{\"item\":[{\"opr_ymd\":\"20250801\",\"dow_cd\":\"6\",\"dow_nm\":\"금요일\",\"ctpv_cd\":\"11\",\"ctpv_nm\":\"서울특별시\",\"sgg_cd\":\"11710\",\"sgg_nm\":\"송파구\",\"emd_cd\":\"1171010100\",\"emd_nm\":\"잠실동\",\"sttn_id\":\"0000081\",\"sttn_nm\":\"잠실역\",\"sttn_ars_no\":\"24715\","
+  }
+ ]
+}
