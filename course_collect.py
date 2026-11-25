@@ -65,9 +65,16 @@ os.makedirs("data", exist_ok=True)
 def call(path, **params):
     params.update({"serviceKey": GG_KEY, "format": "json"})
     url = f"{BASE}/{path}?{urllib.parse.urlencode(params)}"
-    with urllib.request.urlopen(url, timeout=15) as r:
-        data = json.loads(r.read().decode("utf-8"))
-    return (data.get("response") or {}).get("msgBody") or {}
+    for attempt in range(3):  # 해외 러너에서 TLS 핸드셰이크 타임아웃이 종종 남
+        try:
+            with urllib.request.urlopen(url, timeout=30) as r:
+                data = json.loads(r.read().decode("utf-8"))
+            return (data.get("response") or {}).get("msgBody") or {}
+        except Exception as e:
+            if attempt == 2:
+                raise
+            print(f"[retry] {path.split('/')[-1]}: {e}", file=sys.stderr)
+            time.sleep(5)
 
 
 def as_list(x):
@@ -102,9 +109,14 @@ def append(path, rows):
 
 def find_station(t):
     """키워드로 정류소를 찾아 노선(must)·방향(dest)이 맞는 첫 정류소를 station으로 설정"""
-    for st in as_list(call("busstationservice/v2/getBusStationListv2", keyword=t["kw"]).get("busStationList"))[:15]:
+    body = call("busstationservice/v2/getBusStationListv2", keyword=t["kw"])
+    sts = next((as_list(v) for v in body.values()), [])
+    print(f"[i] '{t['kw']}' 정류소 {len(sts)}개: {[s.get('stationName') for s in sts[:6]]}")
+    for st in sts[:15]:
         for r in as_list(call("busstationservice/v2/getBusStationViaRouteListv2",
                               stationId=st["stationId"]).get("busRouteList")):
+            if str(r.get("routeName")) == t["route"]:
+                print(f"    {st.get('stationName')} {st['stationId']}: {t['route']}→{r.get('routeDestName')}")
             if str(r.get("routeName")) == t["route"] and t["dest"] in str(r.get("routeDestName")):
                 t["station"] = str(st["stationId"]); t["label"] = f"{st.get('stationName')}"
                 return True
