@@ -45,7 +45,11 @@ AM, PM = (6, 10), (16, 21)
 TARGETS = [
     {"route": "8800", "station": "102000070", "label": "순천향대학병원(한남동)", "windows": [AM, PM], "every": 90},
     {"route": "1112", "station": "123000001", "label": "잠실역.잠실대교남단(중)", "windows": [AM, PM], "every": 90},
-    {"route": "7770", "station": "121001315", "label": "사당역(중)", "routeId": "233000031", "windows": [PM], "every": 180},
+    # 하남 감일 → 서울 출근 (일반 시내버스, 빈자리 대신 혼잡도 crowded 1~4)
+    {"route": "35", "station": "227000647", "label": "감일푸르지오마크베르(잠실 방면)", "routeId": "227000043", "windows": [AM], "every": 150},
+    {"route": "87", "station": "227000344", "label": "감일푸르지오마크베르(수서 방면)", "routeId": "227000036", "windows": [AM], "every": 150},
+    # 한도(서비스별 1,000건/일) 때문에 7770은 감일 노선과 교체
+    # {"route": "7770", "station": "121001315", "label": "사당역(중)", "routeId": "233000031", "windows": [PM], "every": 180},
     # 한도 때문에 꺼 둔 예비 노선 (주력이 실패하면 위 줄과 바꿔 쓰기)
     # {"route": "M5443", "station": "201000359", "label": "홈플러스서수원점", "routeId": "200000325", "windows": [AM], "every": 180},
     # {"route": "M5107", "station": None, "label": "노선 전체", "routeId": "234001243", "windows": [PM], "every": 180},
