@@ -1,0 +1,23 @@
+name: probe
+on: workflow_dispatch
+permissions:
+  contents: write
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      TZ: Asia/Seoul
+      GG_KEY: ${{ secrets.GG_KEY }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - run: python3 probe.py
+      - name: 결과 커밋
+        if: always()
+        run: |
+          git config user.name "collector-bot"; git config user.email "collector-bot@users.noreply.github.com"
+          git add data/probe || true
+          git commit -m "probe: 국토부 API 실호출 결과" || echo "변경 없음"
+          git pull --rebase -q origin main && git push -q origin HEAD:main
