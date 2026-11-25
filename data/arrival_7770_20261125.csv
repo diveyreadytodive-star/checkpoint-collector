@@ -1,0 +1,4 @@
+crowded1,crowded2,flag,locationNo1,locationNo2,lowPlate1,lowPlate2,plateNo1,plateNo2,predictTime1,predictTime2,remainSeatCnt1,remainSeatCnt2,routeDestId,routeDestName,routeId,routeName,routeTypeCd,staOrder,stationId,stationNm1,stationNm2,taglessCd1,taglessCd2,turnSeq,vehId1,vehId2,predictTimeSec1,predictTimeSec2,collected_at
+1,1,PASS,1,5,0,0,경기70사1192,경기70사1692,1,9,34,34,202000208,수원역4번출구.노보텔수원,233000031,7770,11,33,121001315,남태령역(중),과천터널진입(미정차),1,0,33,233000081,200011224,32,575,2026-11-25T20:51:13
+1,1,PASS,3,4,0,0,경기70사1692,경기70사1169,6,8,34,41,202000208,수원역4번출구.노보텔수원,233000031,7770,11,33,121001315,대공원고가교(미정차),과천IC(미정차),0,1,33,200011224,233000059,413,503,2026-11-25T20:54:18
+1,1,PASS,2,3,0,0,경기70사1692,경기70사1169,3,5,34,41,202000208,수원역4번출구.노보텔수원,233000031,7770,11,33,121001315,과천동행정복지센터,대공원고가교(미정차),0,1,33,200011224,233000059,237,318,2026-11-25T20:57:24
