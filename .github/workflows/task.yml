@@ -1,5 +1,7 @@
 name: task
 on:
+  push:
+    paths: ["tasks/run.txt"]
   workflow_dispatch:
     inputs:
       script: { description: "실행할 파이썬 파일", required: true, default: "discover.py" }
@@ -16,7 +18,9 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with: { python-version: "3.12" }
-      - run: python3 "${{ inputs.script }}"
+      - run: |
+          S="${{ inputs.script }}"; [ -z "$S" ] && S=$(head -1 tasks/run.txt)
+          echo "실행: $S"; python3 "$S"
       - name: 결과 커밋
         if: always()
         run: |
