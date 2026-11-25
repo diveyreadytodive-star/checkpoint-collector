@@ -29,6 +29,7 @@ jobs:
       TZ: Asia/Seoul
       MAX_MINUTES: "325"
       GG_KEY: ${{ secrets.GG_KEY }}
+      SEOUL_KEY: ${{ secrets.SEOUL_KEY }}
     steps:
       - uses: actions/checkout@v4
 
@@ -55,8 +56,11 @@ jobs:
           BUS=$!
           python3 station_collect.py &
           ST=$!
+          python3 seoul_collect.py &
+          SE=$!
           wait $BUS || true
           wait $ST || true
+          wait $SE || true
 
       - name: 결과 커밋
         if: always()
