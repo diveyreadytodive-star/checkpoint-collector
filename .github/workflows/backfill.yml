@@ -1,0 +1,26 @@
+name: backfill
+on:
+  push:
+    paths: ["backfill.py"]
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    env:
+      TZ: Asia/Seoul
+      GG_KEY: ${{ secrets.GG_KEY }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - run: python3 backfill.py
+      - name: 결과 커밋
+        if: always()
+        run: |
+          git config user.name "collector-bot"; git config user.email "collector-bot@users.noreply.github.com"
+          git add data || true
+          git commit -m "data: 국토부 과거 데이터 백필" || echo "변경 없음"
+          git pull --rebase -q origin main && git push -q origin HEAD:main
