@@ -48,7 +48,7 @@ jobs:
           curl -s -o /dev/null -w "data.go.kr HTTP %{http_code}\n" \
             "https://apis.data.go.kr/6410000/busstationservice/v2/getBusStationViaRouteListv2?serviceKey=${GG_KEY}&stationId=102000070&format=json" || true
 
-      - name: 수집 (버스 코스 + 따릉이 병렬)
+      - name: 수집 (경기버스 코스)
         run: |
           python3 course_collect.py &
           BUS=$!
