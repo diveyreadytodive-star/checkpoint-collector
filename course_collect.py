@@ -46,8 +46,7 @@ TARGETS = [
     {"route": "8800", "station": "102000070", "label": "순천향대학병원(한남동)", "windows": [AM, PM], "every": 90},
     {"route": "1112", "station": "123000002", "label": "잠실역.잠실대교남단(중) 경기행", "windows": [PM], "every": 180},
     # OSINT 고혼잡 노선 (출근): 미사→판교 3000(황산사거리 만차·전세버스 투입), 동탄 M4101(줄서기 대표 노선), 안성 4401(출퇴근 만차)
-    {"route": "3000", "kw": "황산사거리", "dest": "판교", "label": "황산사거리", "windows": [AM], "every": 180},
-    {"route": "M4101", "kw": "한국지역난방공사", "dest": "숭례문", "label": "한국지역난방공사", "windows": [AM], "every": 180},
+    {"route": "3000", "kw": "황산사거리", "dest": "금토천교", "label": "황산사거리", "windows": [AM], "every": 180},
     {"route": "4401", "kw": "공도", "dest": "강남", "label": "공도", "windows": [AM], "every": 180},
     # 하남 감일 → 서울 출근 (일반 시내버스, 빈자리 대신 혼잡도 crowded 1~4)
     {"route": "35", "station": "227000647", "label": "감일푸르지오마크베르(잠실 방면)", "routeId": "227000043", "windows": [AM], "every": 150},
