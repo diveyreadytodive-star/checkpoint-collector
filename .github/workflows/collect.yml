@@ -5,11 +5,17 @@ name: collect
 
 on:
   schedule:
-    # GitHub cron은 UTC 기준. KST = UTC+9. 실행이 5~20분 늦을 수 있어 10분 일찍 잡음.
-    - cron: "50 20 * * 0-4"   # KST 월~금 05:50 → 10시까지
-    - cron: "20 22 * * 0-4"   # 백업 07:20 KST (앞 실행이 일찍 시작돼 먼저 끝난 경우 이어받음)
-    - cron: "50 6 * * 1-5"    # KST 월~금 15:50 → 21시까지
-    - cron: "50 8 * * 1-5"    # 백업 17:50 KST
+    # GitHub cron은 UTC 기준(KST = UTC+9)이고 수 시간씩 늦거나 빠지기도 해서, 창마다 여러 번 걸어 둠.
+    # concurrency로 한 번에 하나만 돌고, 이미 끝난 창에 뒤늦게 시작한 실행은 바로 종료됨.
+    - cron: "50 20 * * 0-4"   # KST 월~금 05:50
+    - cron: "50 21 * * 0-4"   # 06:50
+    - cron: "50 22 * * 0-4"   # 07:50
+    - cron: "50 23 * * 0-4"   # 08:50
+    - cron: "50 6 * * 1-5"    # 15:50
+    - cron: "50 7 * * 1-5"    # 16:50
+    - cron: "50 8 * * 1-5"    # 17:50
+    - cron: "50 9 * * 1-5"    # 18:50
+    - cron: "50 10 * * 1-5"   # 19:50
   workflow_dispatch:          # Actions 탭에서 수동 실행(테스트용)
     inputs:
       until_hour:
@@ -45,14 +51,21 @@ jobs:
           if [ -n "${{ github.event.inputs.until_hour }}" ]; then U=${{ github.event.inputs.until_hour }};
           elif [ "$H" -lt 12 ]; then U=10; else U=21; fi
           echo "RUN_UNTIL_HOUR=$U" >> "$GITHUB_ENV"
+          # 창 시작보다 1시간 넘게 일찍 깨어난 실행은 시간 제한만 소모하므로 바로 종료(다음 예약이 이어받음)
+          if [ -z "${{ github.event.inputs.until_hour }}" ]; then
+            if [ "$H" -lt 12 ]; then S=6; else S=16; fi
+            if [ $((10#$H)) -lt $((S-1)) ] || [ $((10#$H)) -ge "$U" ]; then echo "SKIP=1" >> "$GITHUB_ENV"; echo "창 밖 실행 → 건너뜀"; fi
+          fi
           echo "now=$(date '+%F %T %Z'), until=$U"
 
       - name: API 연결 확인 (해외 IP 차단 여부)
+        if: env.SKIP != '1'
         run: |
           curl -s -o /dev/null -w "data.go.kr HTTP %{http_code}\n" \
             "https://apis.data.go.kr/6410000/busstationservice/v2/getBusStationViaRouteListv2?serviceKey=${GG_KEY}&stationId=102000070&format=json" || true
 
       - name: 수집 (경기버스 코스)
+        if: env.SKIP != '1'
         run: |
           python3 course_collect.py &
           BUS=$!
