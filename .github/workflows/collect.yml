@@ -7,7 +7,9 @@ on:
   schedule:
     # GitHub cron은 UTC 기준. KST = UTC+9. 실행이 5~20분 늦을 수 있어 10분 일찍 잡음.
     - cron: "50 20 * * 0-4"   # KST 월~금 05:50 → 10시까지
+    - cron: "20 22 * * 0-4"   # 백업 07:20 KST (앞 실행이 일찍 시작돼 먼저 끝난 경우 이어받음)
     - cron: "50 6 * * 1-5"    # KST 월~금 15:50 → 21시까지
+    - cron: "50 8 * * 1-5"    # 백업 17:50 KST
   workflow_dispatch:          # Actions 탭에서 수동 실행(테스트용)
     inputs:
       until_hour:
@@ -58,9 +60,12 @@ jobs:
           ST=$!
           python3 seoul_collect.py &
           SE=$!
+          python3 seoul_bus_collect.py &
+          SB=$!
           wait $BUS || true
           wait $ST || true
           wait $SE || true
+          wait $SB || true
 
       - name: 결과 커밋
         if: always()
