@@ -4,8 +4,10 @@
   rte_id 41036043 (경기 routeId 200000205, 수원버스터미널 기점)
   기간 2026-07-01 ~ 2026-10-26 (국토부 확인된 최신 제공일)
 → data/hist/onboard_8800_<sgg>.csv, data/hist/route_daily_8800_<sgg>.csv
-서비스별 하루 1,000건 한도 → API별 950건에서 멈춘다(최근 날짜부터 받음)."""
-import os, json, csv, time, urllib.request, urllib.parse, datetime as dt
+서비스별 하루 1,000건 한도 → API별 950건에서 멈춘다(최근 날짜부터 받음).
+이어받기: 이미 받은 날은 건너뛰고, 10일마다 파일에 저장, MAX_MINUTES(기본 300분)가 되면 저장 후 끝낸다
+(첫 실행은 작업 시간 60분 제한에 걸려 장안·권선·팔달 재차인원만 남았다 → 같은 명령으로 다시 실행)."""
+import os, sys, json, csv, time, urllib.request, urllib.parse, datetime as dt
 
 KEY = os.environ["GG_KEY"]
 BASE = "https://apis.data.go.kr/1613000"
@@ -24,6 +26,7 @@ REGIONS = {
                     ("41", "41115", "수원 팔달구"), ("41", "41117", "수원 영통구")],
 }
 LIMIT = 950
+DEADLINE = time.time() + 60 * int(os.environ.get("MAX_MINUTES", "300"))
 calls = {k: 0 for k in APIS}
 
 
@@ -34,43 +37,69 @@ def get(api, day, ctpv, sgg):
         try:
             calls[api] += 1
             with urllib.request.urlopen(f"{BASE}/{APIS[api]}?" + urllib.parse.urlencode(q), timeout=60) as r:
-                j = json.loads(r.read().decode("utf-8", "replace"))
+                raw = r.read().decode("utf-8", "replace")
+            if "LIMITED_NUMBER_OF_SERVICE_REQUESTS" in raw or "<returnReasonCode>22<" in raw:
+                print(f"[{api}] 일 한도 초과 → 이 API 중단", flush=True)
+                calls[api] = LIMIT
+                return []
+            j = json.loads(raw)
             b = (j.get("Response") or j.get("response") or {}).get("body") or {}
             it = b.get("items") or {}
             it = it.get("item", []) if isinstance(it, dict) else it
             return it if isinstance(it, list) else [it]
         except Exception as e:
-            print(f"  재시도 {t + 1} {api} {sgg} {day}: {e}")
+            print(f"  재시도 {t + 1} {api} {sgg} {day}: {e}", flush=True)
             time.sleep(5 * (t + 1))
     return []
 
 
+def load(path):
+    return list(csv.DictReader(open(path))) if os.path.exists(path) else []
+
+
+def save(path, rows):
+    if rows:
+        fields = list(dict.fromkeys(k for r in rows for k in r))
+        with open(path, "w", newline="") as f:
+            w = csv.DictWriter(f, fieldnames=fields, extrasaction="ignore")
+            w.writeheader(); w.writerows(rows)
+
+
 os.makedirs("data/hist", exist_ok=True)
-summary = {}
+summary, stopped = {}, None
 for api, regions in REGIONS.items():
     for ctpv, sgg, label in regions:
         path = f"data/hist/{api}_8800_{sgg}.csv"
-        rows, d, empty_streak = [], END, 0
-        while d >= START and calls[api] < LIMIT:
-            got = [x for x in get(api, d.strftime("%Y%m%d"), ctpv, sgg) if x]
-            rows += got
-            # 이 구에 8800 정류장이 없으면 처음 7일 연속 빈 응답 → 다음 구로
+        rows = load(path)
+        have = {r.get("opr_ymd") for r in rows}
+        d, empty_streak, n = END, 0, 0
+        while d >= START:
+            if calls[api] >= LIMIT:
+                stopped = stopped or f"{api} 한도"; break
+            if time.time() > DEADLINE:
+                stopped = "시간"; break
+            day = d.strftime("%Y%m%d"); d -= dt.timedelta(days=1)
+            if day in have:
+                continue
+            got = [x for x in get(api, day, ctpv, sgg) if x]
+            rows += got; n += 1
             empty_streak = 0 if got else empty_streak + 1
-            if not rows and empty_streak >= 7:
-                print(f"[{api}] {label}: 최근 7일 응답 없음 → 건너뜀")
+            if not rows and empty_streak >= 7:  # 이 구에 8800 정류장이 없으면 다음 구로
+                print(f"[{api}] {label}: 최근 7일 응답 없음 → 건너뜀", flush=True)
                 break
-            d -= dt.timedelta(days=1)
-        if rows:
-            fields = list(dict.fromkeys(k for r in rows for k in r))
-            with open(path, "w", newline="") as f:
-                w = csv.DictWriter(f, fieldnames=fields, extrasaction="ignore")
-                w.writeheader(); w.writerows(rows)
+            if n % 10 == 0:
+                save(path, rows)
+        save(path, rows)
         days = len({r.get("opr_ymd") for r in rows})
         summary[f"{api}_{sgg}"] = {"label": label, "rows": len(rows), "days": days,
                                    "stops": len({r.get("sttn_id") for r in rows if r.get("sttn_id")})}
-        print(f"[{api}] {label}: {len(rows)}행, {days}일 (호출 누계 {calls[api]})")
+        print(f"[{api}] {label}: {len(rows)}행, {days}일 (호출 누계 {calls[api]})", flush=True)
+        if stopped == "시간":
+            break
+    if stopped == "시간":
+        break
 
 json.dump({"route": "8800", "rte_id": RID, "range": [START.isoformat(), END.isoformat()],
-           "calls": calls, "files": summary},
+           "calls": calls, "stopped": stopped, "files": summary},
           open("data/hist/backfill_8800_summary.json", "w"), ensure_ascii=False, indent=1)
-print("호출 수:", calls)
+print("호출 수:", calls, "멈춘 이유:", stopped, flush=True)

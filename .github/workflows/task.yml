@@ -10,10 +10,12 @@ permissions:
 jobs:
   run:
     runs-on: ubuntu-latest
-    timeout-minutes: 60
+    timeout-minutes: 330   # 스크립트는 MAX_MINUTES(300분)에 저장하고 끝냄 → 커밋 단계 여유
     env:
       TZ: Asia/Seoul
       GG_KEY: ${{ secrets.GG_KEY }}
+      PYTHONUNBUFFERED: "1"
+      MAX_MINUTES: "300"
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
