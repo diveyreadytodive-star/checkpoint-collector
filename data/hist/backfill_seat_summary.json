@@ -1,0 +1,268 @@
+{
+ "range": [
+  "2026-07-01",
+  "2026-10-26"
+ ],
+ "weekdays_only": true,
+ "calls": {
+  "onboard": 901,
+  "route_daily": 900
+ },
+ "stopped": "한도",
+ "blocked": [],
+ "routes": {
+  "3007": {
+   "gg_route_id": "200000110",
+   "rte_id": "41036022",
+   "rte_nm": "수원버스터미널-수원버스터미널",
+   "overlap": 1.0,
+   "files": {
+    "onboard_3007_41111.csv": {
+     "rows": 566,
+     "days": 32,
+     "stops": 2
+    },
+    "onboard_3007_41113.csv": {
+     "rows": 4703,
+     "days": 31,
+     "stops": 12
+    },
+    "onboard_3007_41115.csv": {
+     "rows": 5222,
+     "days": 31,
+     "stops": 11
+    },
+    "onboard_3007_41117.csv": {
+     "rows": 8364,
+     "days": 31,
+     "stops": 19
+    },
+    "route_daily_3007_41111.csv": {
+     "rows": 1090,
+     "days": 49,
+     "stops": null
+    },
+    "route_daily_3007_41113.csv": {
+     "rows": 1995,
+     "days": 49,
+     "stops": null
+    },
+    "route_daily_3007_41115.csv": {
+     "rows": 3150,
+     "days": 49,
+     "stops": null
+    },
+    "route_daily_3007_41117.csv": {
+     "rows": 5498,
+     "days": 49,
+     "stops": null
+    }
+   }
+  },
+  "7001": {
+   "gg_route_id": "200000119",
+   "rte_id": "41036018",
+   "rte_nm": "수원버스터미널-수원버스터미널",
+   "overlap": 1.0,
+   "files": {
+    "onboard_7001_41111.csv": {
+     "rows": 569,
+     "days": 31,
+     "stops": 1
+    },
+    "onboard_7001_41113.csv": {
+     "rows": 5553,
+     "days": 31,
+     "stops": 12
+    },
+    "onboard_7001_41115.csv": {
+     "rows": 5591,
+     "days": 31,
+     "stops": 11
+    },
+    "onboard_7001_41117.csv": {
+     "rows": 9193,
+     "days": 31,
+     "stops": 19
+    },
+    "route_daily_7001_41111.csv": {
+     "rows": 1202,
+     "days": 49,
+     "stops": null
+    },
+    "route_daily_7001_41113.csv": {
+     "rows": 2476,
+     "days": 49,
+     "stops": null
+    },
+    "route_daily_7001_41115.csv": {
+     "rows": 3432,
+     "days": 49,
+     "stops": null
+    },
+    "route_daily_7001_41117.csv": {
+     "rows": 5700,
+     "days": 49,
+     "stops": null
+    }
+   }
+  },
+  "3102": {
+   "gg_route_id": "216000061",
+   "rte_id": null,
+   "rte_nm": null,
+   "overlap": null,
+   "files": {}
+  },
+  "2007": {
+   "gg_route_id": "200000120",
+   "rte_id": "41020002",
+   "rte_nm": "오목천차고지(미-오목천차고지(미",
+   "overlap": 1.0,
+   "files": {
+    "onboard_2007_41111.csv": {
+     "rows": 11914,
+     "days": 31,
+     "stops": 23
+    },
+    "onboard_2007_41113.csv": {
+     "rows": 1276,
+     "days": 31,
+     "stops": 7
+    },
+    "onboard_2007_41115.csv": {
+     "rows": 4822,
+     "days": 31,
+     "stops": 13
+    },
+    "onboard_2007_41430.csv": {
+     "rows": 2400,
+     "days": 31,
+     "stops": 5
+    },
+    "onboard_2007_41131.csv": {
+     "rows": 1731,
+     "days": 31,
+     "stops": 4
+    },
+    "onboard_2007_41133.csv": {
+     "rows": 2347,
+     "days": 31,
+     "stops": 7
+    },
+    "route_daily_2007_41111.csv": {
+     "rows": 9788,
+     "days": 49,
+     "stops": null
+    },
+    "route_daily_2007_41113.csv": {
+     "rows": 1802,
+     "days": 49,
+     "stops": null
+    },
+    "route_daily_2007_41115.csv": {
+     "rows": 4694,
+     "days": 48,
+     "stops": null
+    },
+    "route_daily_2007_41430.csv": {
+     "rows": 4630,
+     "days": 48,
+     "stops": null
+    },
+    "route_daily_2007_41131.csv": {
+     "rows": 1950,
+     "days": 48,
+     "stops": null
+    },
+    "route_daily_2007_41133.csv": {
+     "rows": 4623,
+     "days": 48,
+     "stops": null
+    }
+   }
+  },
+  "1552": {
+   "gg_route_id": "234001708",
+   "rte_id": "41003723",
+   "rte_nm": "한신대스쿨버스정-한신대스쿨버스정",
+   "overlap": 1.0,
+   "files": {
+    "onboard_1552_41370.csv": {
+     "rows": 702,
+     "days": 31,
+     "stops": 8
+    },
+    "route_daily_1552_41370.csv": {
+     "rows": 587,
+     "days": 48,
+     "stops": null
+    }
+   }
+  },
+  "8501": {
+   "gg_route_id": "233000135",
+   "rte_id": null,
+   "rte_nm": null,
+   "overlap": null,
+   "files": {}
+  },
+  "6008": {
+   "gg_route_id": "233000321",
+   "rte_id": null,
+   "rte_nm": null,
+   "overlap": null,
+   "files": {}
+  },
+  "P9301": {
+   "gg_route_id": "233000336",
+   "rte_id": null,
+   "rte_nm": null,
+   "overlap": null,
+   "files": {}
+  },
+  "8202": {
+   "gg_route_id": "234001737",
+   "rte_id": "41110007D",
+   "rte_nm": "안성종합버스터미-안성종합버스터미",
+   "overlap": 1.0,
+   "files": {
+    "onboard_8202_41550.csv": {
+     "rows": 2069,
+     "days": 31,
+     "stops": 14
+    },
+    "route_daily_8202_41550.csv": {
+     "rows": 2974,
+     "days": 48,
+     "stops": null
+    }
+   }
+  },
+  "4402": {
+   "gg_route_id": "231000139",
+   "rte_id": "41103424",
+   "rte_nm": "동아방송예술대학-동아방송예술대학",
+   "overlap": 1.0,
+   "files": {
+    "onboard_4402_41550.csv": {
+     "rows": 3129,
+     "days": 31,
+     "stops": 9
+    },
+    "route_daily_4402_41550.csv": {
+     "rows": 5019,
+     "days": 48,
+     "stops": null
+    }
+   }
+  },
+  "M4403": {
+   "gg_route_id": "234000995",
+   "rte_id": null,
+   "rte_nm": null,
+   "overlap": null,
+   "files": {}
+  }
+ }
+}
